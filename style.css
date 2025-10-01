@@ -1,0 +1,115 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+
+/* Background */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0d0d0d;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main container */
+.main {
+  width: min(600px, 95%);
+  background: #1a1a1a;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.25),
+    inset 0 0 12px rgba(0, 255, 200, 0.15);
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.main:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 40px rgba(0, 255, 200, 0.35),
+    inset 0 0 14px rgba(0, 255, 200, 0.2);
+}
+
+/* Heading */
+.main h1 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin-bottom: 18px;
+  color: #00ffc8;
+  text-shadow: 0 0 6px rgba(0, 255, 200, 0.6);
+  letter-spacing: 1px;
+}
+
+/* Advice box */
+#display-advice {
+  min-height: 80px;
+  background: #111;
+  border: 1px solid rgba(0, 255, 200, 0.25);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.4;
+  color: #e8fdf9;
+  box-shadow: inset 0 0 12px rgba(0, 255, 200, 0.15);
+  transition: opacity 0.3s ease;
+}
+
+/* Pop animation */
+@keyframes glow {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+#display-advice.pop {
+  animation: glow 0.4s ease-out;
+}
+
+/* Button */
+button {
+  padding: 12px 26px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0d0d0d;
+  background: linear-gradient(90deg, #00ffc8, #00bfff);
+  box-shadow: 0 0 12px rgba(0, 255, 200, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px rgba(0, 255, 200, 0.6);
+}
+button:active {
+  transform: translateY(0);
+}
+
+/* Responsive tweak */
+@media (max-width: 420px) {
+  .main {
+    padding: 22px;
+  }
+  #display-advice {
+    padding: 14px;
+    min-height: 60px;
+  }
+  button {
+    width: 100%;
+  }
+}
